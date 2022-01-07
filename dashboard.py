@@ -29,7 +29,7 @@ data = []
 def check_in():
     room_new = request.form["room_new"]
     passkey = request.form["pass"]
-    print(room_new, passkey)
+    print("\nSignup room: ", room_new, "\nSignup password: ", passkey, "\n")
     data.append(room_new)
     data.append(passkey)
     return render_template("login.html")
@@ -39,11 +39,14 @@ def check_in():
 def service():
     room = request.form["room_id"]
     password = request.form["password"]
-    print(room, password)
+    print("\nLogin room: ", room, "\nLogin password: ", password, "\n")
+    print(data, '\n')
     if (room not in data) and (password not in data):
         return render_template("login.html")
     else:
         return render_template("service.html")
+
+
 
 
 if __name__ == '__main__':
