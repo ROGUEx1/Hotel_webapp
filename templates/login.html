@@ -63,7 +63,7 @@
                 </div>
               </form>
   
-              <form action="index.html" autocomplete="off" class="sign-up-form">
+              <form action="/login" autocomplete="off" class="sign-up-form" method="POST">
                 <div class="logo">
                   <img src="/static/images/service.png" alt="butler" />
                   <h4>Butler</h4>
@@ -79,17 +79,19 @@
                   <div class="input-wrap">
                     <input
                       type="text"
+                      name="room_new"
                       minlength="4"
                       class="input-field"
                       autocomplete="off"
                       required
                     />
-                    <label>Name</label>
+                    <label>Room ID</label>
                   </div>
   
                   <div class="input-wrap">
                     <input
                       type="email"
+                      name="email"
                       class="input-field"
                       autocomplete="off"
                       required
@@ -100,6 +102,7 @@
                   <div class="input-wrap">
                     <input
                       type="password"
+                      name="pass"
                       minlength="4"
                       class="input-field"
                       autocomplete="off"

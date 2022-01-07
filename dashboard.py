@@ -15,14 +15,24 @@ import os
 app = Flask(__name__)
 
 
-@app.route('/')
-@app.route('/home')
-@app.route('/login')
+@app.route('/', methods=['GET', 'POST'])
+@app.route('/home', methods=['GET', 'POST'])
 def home():
     return render_template("login.html")
 
 
-temp = {"room_id": "123", "password": "password"}
+data = []
+
+
+@app.route('/login', methods=['GET', 'POST'])
+@app.route('/register', methods=['GET', 'POST'])
+def check_in():
+    room_new = request.form["room_new"]
+    passkey = request.form["pass"]
+    print(room_new, passkey)
+    data.append(room_new)
+    data.append(passkey)
+    return render_template("login.html")
 
 
 @app.route('/service', methods=['GET', 'POST'])
@@ -30,14 +40,10 @@ def service():
     room = request.form["room_id"]
     password = request.form["password"]
     print(room, password)
-    if room not in temp:
-        return render_template("login.html")
-    elif temp[room] != password:
+    if (room not in data) and (password not in data):
         return render_template("login.html")
     else:
         return render_template("service.html")
-
-
 
 
 if __name__ == '__main__':
