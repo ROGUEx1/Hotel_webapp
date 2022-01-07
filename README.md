@@ -10,3 +10,9 @@
         - Variable 'room' = Room ID
         - Variable 'password' = Password 
      -Values can be used for user verification  
+
+* Registration data:
+    - Open dashbord.py
+        - Variable 'room_new' = Room ID
+        - Variable 'passkey' = Password 
+     -Values can be used for user data storage
