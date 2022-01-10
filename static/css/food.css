@@ -1,0 +1,13 @@
+/*global setting*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+/*header*/
+.header .logo{}
+.header .nav-toggler{
+    height: 34px;
+    width: 40%;
+}

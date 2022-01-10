@@ -1,16 +1,7 @@
-# import cgi
-# import webbrowser
-#
-# webbrowser.open_new_tab('http://localhost:63342/Hotel_webapp/Static/login.html')
-#
-# form = cgi.FieldStorage()
-#
-# room = form.getvalue("room_id")
-#
-# print(room)
-
 from flask import Flask, render_template, request, redirect
 import os
+import pandas as pd
+from admin import *
 
 app = Flask(__name__)
 
@@ -41,12 +32,15 @@ def service():
     password = request.form["password"]
     print("\nLogin room: ", room, "\nLogin password: ", password, "\n")
     print(data, '\n')
-    if (room not in data) and (password not in data):
+    control = ["manage", "cater", "maintain", "serve"]
+    ctrl_key = "admin"
+    if room in control and password == ctrl_key:
+        employee()
+        return render_template("employee.html")
+    elif (room not in data) and (password not in data):
         return render_template("login.html")
     else:
         return render_template("service.html")
-
-
 
 
 if __name__ == '__main__':

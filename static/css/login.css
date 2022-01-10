@@ -209,8 +209,8 @@ main.sign-up-mode .carousel {
 
 .carousel {
   position: absolute;
-  height: 103%;
-  width: 55%;
+  height: 100%;
+  width: 50%;
   left: 45%;
   top: 0;
   background-color: rgba(39, 38, 38, 0.589);
