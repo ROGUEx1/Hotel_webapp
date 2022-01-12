@@ -43,5 +43,66 @@ def service():
         return render_template("service.html")
 
 
+@app.route('/food')
+@app.route('/templates/index.html')
+def food():
+    return render_template('index.html')
+
+
+@app.route('/templates/menu.html')
+def menu():
+    return render_template('menu.html')
+
+
+@app.route('/templates/about.html')
+def about():
+    return render_template('about.html')
+
+
+@app.route('/templates/blog.html')
+def blog():
+    return render_template('blog.html')
+
+
+@app.route('/templates/blog-detail.html')
+def blog_detail():
+    return render_template('blog-detail.html')
+
+
+@app.route('/templates/contact.html')
+def contact():
+    return render_template('contact.html')
+
+
+@app.route('/templates/gallery.html')
+def gallery():
+    return render_template('gallery.html')
+
+
+@app.route('/templates/reservation.html')
+def reservation():
+    return render_template('reservation.html')
+
+
+@app.route('/return')
+def back():
+    return render_template('service.html')
+
+
+@app.route('/order', methods=['GET', 'POST'])
+def orders():
+    room_id = request.form["room_id"]
+    starters = request.form["starters"]
+    main_course = request.form["main_course"]
+    drinks = request.form["drinks"]
+    dessert = request.form["dessert"]
+    lunch = request.form["lunch"]
+    dinner = request.form["dinner"]
+    deliver = request.form["deliver"]
+    print("\nRoom id: ", room_id, "\nStarters: ", starters, "\nMain course: ", main_course, "\nDrinks: ", drinks,
+          "\nDessert: ", dessert, "\nLunch: ", lunch, "\nDinner: ", dinner, "\nDeliver to: ", deliver, "\n")
+    return render_template('reservation.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True, port=5001)
