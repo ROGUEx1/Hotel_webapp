@@ -1,4 +1,4 @@
-# Hotel_webapp
+# Hotel_webapp (don't write on the dashboard.py file)
 
 * How to run it:
     - Open dashboard.py
