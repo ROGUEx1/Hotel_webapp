@@ -12,7 +12,6 @@ def home():
     return render_template("login.html")
 
 
-data = []
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -22,9 +21,7 @@ def check_in():
     passkey = request.form["pass"]
     print("\nSignup room: ", room, "\nSignup password: ", passkey, "\n")
     new_guest = guest.Guest(room, passkey)
-    data.append(new_guest)
     database(new_guest)
-    print(data, "\n")
     return render_template("login.html")
 
 
