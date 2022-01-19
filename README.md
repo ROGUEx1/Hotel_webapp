@@ -16,3 +16,12 @@
         - Variable 'room_new' = Room ID
         - Variable 'passkey' = Password 
      -Values can be used for user data storage
+     
+* Admin login
+    - In room id enter either of this:
+        - cater = view food orders
+        - manage = view management feedback
+        - maintain = view fix requests
+        - house = view house keeping requests
+    - Password:
+        - admin
